@@ -103,20 +103,18 @@ $(document).ready(function(){
     }, function(){
 
     }).then(function(res){
-        var values = Object.values(res);
-        client_tweets = values;
-
-        // using underscore to randomize the tweets
-        var underscoreTweet = _.sample(client_tweets);
-        console.log(underscoreTweet);
 
         // user click to open modal
         trigger.onclick = function() {
+            var values = Object.values(res);
+            client_tweets = values;
+            // using underscore to randomize the tweets
+            var underscoreTweet = _.sample(client_tweets);
+            console.log(underscoreTweet);
             modal.style.display = "block";
             var tweet_to_append = document.getElementById('put-shit-here');
             tweet_to_append.innerHTML = underscoreTweet.content;
         }
-
     });
 
 });
