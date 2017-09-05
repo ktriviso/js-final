@@ -19,6 +19,7 @@ var params = {
 app.use(bodyParser.json())
 app.use(cors())
 
+// still use static assets while rendering server side
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // home route
